@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:weightSum="5.0" >
+    android:weightSum="5.0"
+     >
     
     <ImageView 
         android:id="@+id/thumb"
@@ -21,7 +22,7 @@
     <ImageView 
         android:id="@+id/lock"
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
+        android:layout_height="30dp"
         android:layout_weight="0.5" />    
     
     
