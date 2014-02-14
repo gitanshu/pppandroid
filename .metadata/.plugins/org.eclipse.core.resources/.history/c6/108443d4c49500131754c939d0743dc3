@@ -1,5 +1,0 @@
-package com.ppp.ppp;
-
-public class RoomAdapter extends ListAdapter<RoomObject>{
-	
-}

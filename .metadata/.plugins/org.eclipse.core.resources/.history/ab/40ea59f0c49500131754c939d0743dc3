@@ -1,7 +1,0 @@
-package com.ppp.ppp;
-
-import android.widget.ArrayAdapter;
-
-public class RoomAdapter extends ArrayAdapter<RoomObject>{
-	
-}
