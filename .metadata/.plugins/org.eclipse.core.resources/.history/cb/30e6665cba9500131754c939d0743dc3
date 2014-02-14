@@ -1,0 +1,6 @@
+CardArrayAdapter mCardArrayAdapter = new CardArrayAdapter(getActivity(),cards);
+
+        CardListView listView = (CardListView) getActivity().findViewById(R.id.myList);
+        if (listView!=null){
+            listView.setAdapter(mCardArrayAdapter);
+        }

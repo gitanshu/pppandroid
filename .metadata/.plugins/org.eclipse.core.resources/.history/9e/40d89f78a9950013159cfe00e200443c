@@ -1,0 +1,47 @@
+package com.ppp.ppp;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.Window;
+import android.widget.EditText;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+public class MainActivity extends Activity {
+	static final String PPP_URL = "";
+	public static String username = null;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        EditText namefield = (EditText) findViewById(R.id.editText1);
+        SharedPreferences prefs = this.getSharedPreferences("PPP", Context.MODE_PRIVATE);
+        if (!prefs.contains("name")){
+        	prefs.edit().putString("name", namefield.getText().toString());
+        	AsyncHttpClient client = new AsyncHttpClient();
+        	RequestParams params =  new RequestParams();
+        	params.put("", namefield.getText());
+        	client.get(PPP_URL+"", params, new AsyncHttpResponseHandler() {
+        		@Override
+        		public void onSuccess(String response) {
+        			System.out.println(response);
+        		}
+        	});
+        }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    
+}

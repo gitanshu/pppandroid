@@ -1,0 +1,15 @@
+package com.ppp.ppp;
+
+public class RoomObject {
+	int lock;
+	String url;
+	String roomname;
+	
+	public RoomObject(){
+		this.lock = 0;
+		this.url = null;
+		this.roomname = "";
+	}
+
+	
+}

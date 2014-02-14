@@ -1,0 +1,40 @@
+package com.ppp.ppp;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.Window;
+import android.widget.EditText;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+public class MainActivity extends Activity {
+	static final String PPP_URL = "";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        EditText name = (EditText) findViewById(R.id.editText1);
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params =  new RequestParams();
+        params.put("", "");
+        client.get(PPP_URL+"", new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(String response) {
+                System.out.println(response);
+            }
+        });
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    
+}

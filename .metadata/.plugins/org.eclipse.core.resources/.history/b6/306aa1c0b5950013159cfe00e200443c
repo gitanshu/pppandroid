@@ -1,0 +1,35 @@
+package com.ppp.ppp;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+
+public class PhotoroomActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_photoroom);
+		//Log.d("username",MainActivity.username);
+		 ArrayList<Card> cards = new ArrayList<Card>();
+
+	      //Create a Card
+	      Card card = new Card(getContext());
+
+	      //Create a CardHeader
+	      CardHeader header = new CardHeader(getContext());
+	      ....
+	      //Add Header to card
+	      card.addCardHeader(header);
+
+	      cards.add(card);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.photoroom, menu);
+		return true;
+	}
+
+}

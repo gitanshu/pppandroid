@@ -1,0 +1,18 @@
+package com.ppp.ppp;
+
+import java.util.ArrayList;
+
+import android.content.Context;
+import android.widget.ArrayAdapter;
+
+public class RoomAdapter extends ArrayAdapter<RoomObject>{
+	ArrayList<RoomObject> obj = new ArrayList<RoomObject>();
+	Context mcontext;
+	public RoomAdapter(Context context, int resource) {
+		super(context, resource);
+		mcontext = context;
+	}
+	
+	
+	
+}

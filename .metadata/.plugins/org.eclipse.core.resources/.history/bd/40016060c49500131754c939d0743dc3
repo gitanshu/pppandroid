@@ -1,0 +1,7 @@
+package com.ppp.ppp;
+
+public class RoomObject {
+	int lock;
+	
+
+}
